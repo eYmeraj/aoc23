@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-
 #[path = "../utils/utils.rs"] mod utils;
 
 fn main(){
