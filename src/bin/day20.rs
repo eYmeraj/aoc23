@@ -28,11 +28,7 @@ fn main() {
     
     for row in data.iter(){
         let input: String;
-        let target_string: String;
-        let target: Vec<String>;
         input = row.split(" -> ").map(|s| s.to_string()).collect::<Vec<String>>()[0].clone();
-        target_string = row.split(" -> ").map(|s| s.to_string()).collect::<Vec<String>>()[1].clone();
-        target = target_string.split(", ").map(|s| s.to_string()).collect::<Vec<String>>();
 
         if input.contains("%") {
             flip_flops.insert(input.replace("%", ""), 0);
@@ -158,7 +154,6 @@ fn part_2(starting_modules: &Vec<String>, rules: &HashMap<String, Vec<String>>, 
     for num in cycles{
         tot = utils::lcm(tot, num as usize);
     }
-
     println!("{}", tot);
 }
 
